@@ -26,10 +26,12 @@ img{
     /* height: 100px; */
     border-radius: 9999px;
 }
-ul{
+ul.mainList{
     list-style: none;
     display: flex;
     flex-wrap: wrap;
+    min-height: 220px;
+
 }
 li{
     border: 3px solid #323232;
@@ -42,6 +44,7 @@ li{
     font-weight: bolder;
     background:#222222;
     position: relative;
+    font-size: 18px;
 }
 li a{
     text-decoration: none;
@@ -82,5 +85,21 @@ background-color: #999999;}
     bottom: -4px !important;
     right: 45%;
     cursor: pointer;
+    transform: translateY(-50%);
 
+}
+.removed{
+    left: 3px;
+}
+.favList{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 200px;
+}
+.favList li{
+    width: 100px;
+    max-height: 60px;
+    
+ 
 }

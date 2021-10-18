@@ -14,7 +14,7 @@
 
 		<div id="app">
 			<div v-if="display">
-              <ul>
+              <ul class="mainList">
                   <li v-for="champion in champions" :class="{fav: champion.isFav}" @dblclick="toggleFav($event, champion)">
                     <div  v-show="champion.display">  
                     <span  class="favRibbon" title="double click to toggle fav"></span>
@@ -28,6 +28,12 @@
                         <span  class="removed" title="click to show" v-else @click="show(champion)">?</span>
 
                      <!-- </a> -->
+                  </li>
+              </ul>
+              <ul class="favList">
+                  <h1>Fav Champs List:</h1>
+                  <li v-for="champion in filteredChampions">
+                      <h3>{{champion.name}}</h3>
                   </li>
               </ul>
             </div>

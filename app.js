@@ -62,6 +62,12 @@ methods:{
         champion.display = true;
     },
 
+    },
+    computed: {
+        filteredChampions() {
+            return this.champions.filter(champ => champ.isFav === true);
+            
+    }
 }
 });
 
