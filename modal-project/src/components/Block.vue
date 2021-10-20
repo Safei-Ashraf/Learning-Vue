@@ -1,5 +1,5 @@
 <template>
-  <div class="block" @click="stop">
+  <div class="block" @click="stopTimer"  v-if="showBlock">
       Click me 🐱‍👓
       {{delay}}
   </div>
@@ -9,12 +9,35 @@
 export default {
     props:['delay',],
     methods:{
-        stop(){
-            this.$emit('stop')
+        // stop(){
+        //     this.$emit('stop')
+        // },
+        startTimer(){
+            this.timer = setInterval(()=>{
+                this.reactionTime += this.timeIntervalMs;
+            }, this.timeIntervalMs)
 
+        },
+        stopTimer(){
+            clearInterval(this.timer);
+            console.log(this.reactionTime)
+
+        },
+    },
+    data(){
+        return{
+            showBlock: false,
+            timer: null,
+            reactionTime:0,
+            timeIntervalMs: 10,
         }
-    }
-
+    },
+mounted(){
+    setTimeout(()=>{
+        this.showBlock = true;
+        this.startTimer();
+    }, this.delay)
+},
 }
 </script>
 
