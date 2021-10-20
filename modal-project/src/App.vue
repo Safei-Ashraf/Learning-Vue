@@ -2,7 +2,14 @@
  <div>
    <h1>{{title}}</h1>
  <div v-show="showModal">
-   <Modal :header="header" :text="text" theme="sale" @close="handleCloseModal"/>
+   <Modal theme="sale" @close="handleCloseModal">
+     <h1>Sign up now for free</h1>
+     <p>Grap one today for half price</p>
+       <template v-slot:links>
+                   <a href="#">Sign up Now</a>
+                   <a href="#">Login Now</a>
+        </template>
+   </Modal>
  </div>
  <button v-show="!showModal" @click="handleShowModal">Show Modal</button>
  <button v-show="showModal">Hide Modal</button>
