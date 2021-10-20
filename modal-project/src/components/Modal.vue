@@ -1,13 +1,14 @@
 <template>
     <div class="backdrop">
         <div class="modal">
+            <h1>Modal Title</h1>
             <p>modal content</p>
         </div>
     </div>
 </template>
 
 
-<style >
+<style scoped>
   .modal {
     width: 400px;
     padding: 20px;
