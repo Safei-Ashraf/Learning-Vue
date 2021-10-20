@@ -19,11 +19,11 @@
    <h1>{{titleTwo}}</h1>
  <div v-show="showModalTwo">
    <Modal theme="sale" @close="toggleModelTwo">
-     <h1>Sign up now for free</h1>
-     <p>Grap one today for half price</p>
+     <h1>What a wonderful day to play Teemo 🤢</h1>
+     <p>Grap one tomorrow for double the price</p>
        <template v-slot:links>
-                   <a href="#">Sign up Now</a>
-                   <a href="#">Login Now</a>
+                   <a href="#">Too late</a>
+                   <a href="#">Too soon</a>
         </template>
    </Modal>
  </div>
