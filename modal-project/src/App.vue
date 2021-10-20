@@ -2,7 +2,7 @@
 <div>
 <h1>Ninja Reaction Timer 🐱‍👤</h1>
 <button @click="startGame" :disabled="isPlaying">Play</button>
-<Block v-show="isPlaying" :delay="delay"/>
+<Block v-show="isPlaying" :delay="delay" @stop="stopGame"/>
 </div>
 </template>
 
@@ -21,13 +21,12 @@ export default {
     startGame(){
       this.delay = 2000 + Math.random()*5000;
       this.isPlaying = true;
-      console.log(this.delay)
-      //start timer
-      //after timer set boolean to true or false
-      //if boolean true display the block
-      //if the block is clicked stop game, 
       //      calculate time different between now and started
       //      display result
+    },
+    stopGame(){
+      this.isPlaying = false;
+      console.log('stopping from app')
     }
   }
 }

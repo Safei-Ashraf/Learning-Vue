@@ -1,5 +1,5 @@
 <template>
-  <div class="block">
+  <div class="block" @click="stop">
       Click me 🐱‍👓
       {{delay}}
   </div>
@@ -7,7 +7,13 @@
 
 <script>
 export default {
-    props:['delay',]
+    props:['delay',],
+    methods:{
+        stop(){
+            this.$emit('stop')
+
+        }
+    }
 
 }
 </script>
