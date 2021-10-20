@@ -1,7 +1,7 @@
 <template>
  <div>
    <h1>{{title}}</h1>
- <Modal/>
+ <Modal :header="header" :text="text" theme="sale"/>
  </div>
 </template>
 
@@ -12,7 +12,9 @@ export default {
   components: {Modal},
   data (){
     return{
-      title: 'App title'
+      title: 'App title',
+      header:'Sign up now for free',
+      text:' Grap one today for half price'
     }
   },
   methods:{
