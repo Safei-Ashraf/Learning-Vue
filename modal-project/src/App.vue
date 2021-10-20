@@ -1,7 +1,11 @@
 <template>
  <div>
    <h1>{{title}}</h1>
- <Modal :header="header" :text="text" theme="sale"/>
+ <div v-show="showModal">
+   <Modal :header="header" :text="text" theme="sale" @close="handleCloseModal"/>
+ </div>
+ <button v-show="!showModal" @click="handleShowModal">Show Modal</button>
+ <button v-show="showModal">Hide Modal</button>
  </div>
 </template>
 
@@ -14,12 +18,19 @@ export default {
     return{
       title: 'App title',
       header:'Sign up now for free',
-      text:' Grap one today for half price'
+      text:' Grap one today for half price',
+      showModal: false,
     }
   },
   methods:{
     handleClick(){
       console.log(this.$refs.name.value)
+    },
+    handleShowModal(){
+      this.showModal = true;
+    },
+    handleCloseModal(){
+      this.showModal = false;
     }
   }
 }
