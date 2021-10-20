@@ -1,6 +1,6 @@
 <template>
 <div>
-<h1>Ninja Reaction Timer 🐱‍👤</h1>
+<h1 class="glow">Ninja Reaction Timer 🐱‍👤</h1>
 <button @click="startGame" :disabled="isPlaying">Play</button>
 <Block v-if="isPlaying" :delay="delay" @stopGame="stopGame"/>
 <Results v-if="showResults" :score="score">
@@ -158,6 +158,23 @@ button:disabled{
   color: #196231;
   cursor: not-allowed;
 
+}
+.glow {
+  font-size: 3rem;
+  color: #fff;
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+  margin-bottom: 1rem;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 15px #e60073, 0 0 20px #e60073, 0 0 25px #e60073, 0 0 30px #e60073, 0 0 35px #e60073;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 15px #ff4da6, 0 0 20px #ff4da6, 0 0 25px #ff4da6, 0 0 30px #ff4da6, 0 0 35px #ff4da6, 0 0 40px #ff4da6;
+  }
 }
 
 @keyframes bubbles {
