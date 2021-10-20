@@ -1,4 +1,5 @@
 <template>
+<div>
  <div>
    <h1>{{title}}</h1>
  <div v-show="showModal">
@@ -14,6 +15,25 @@
  <button v-show="!showModal" @click="handleShowModal">Show Modal</button>
  <button v-show="showModal">Hide Modal</button>
  </div>
+  <div>
+   <h1>{{titleTwo}}</h1>
+ <div v-show="showModalTwo">
+   <Modal theme="sale" @close="toggleModelTwo">
+     <h1>Sign up now for free</h1>
+     <p>Grap one today for half price</p>
+       <template v-slot:links>
+                   <a href="#">Sign up Now</a>
+                   <a href="#">Login Now</a>
+        </template>
+   </Modal>
+ </div>
+ <button  @click.right="toggleModelTwo">
+   <span v-if="!showModalTwo">Show Modal</span>
+   <span v-else>Hide Modal</span>
+ </button>
+ </div>
+
+ </div>
 </template>
 
 <script>
@@ -24,9 +44,9 @@ export default {
   data (){
     return{
       title: 'App title',
-      header:'Sign up now for free',
-      text:' Grap one today for half price',
+      titleTwo:'2nd Modal Title',
       showModal: false,
+      showModalTwo: false,
     }
   },
   methods:{
@@ -38,6 +58,9 @@ export default {
     },
     handleCloseModal(){
       this.showModal = false;
+    },
+    toggleModelTwo(){
+      this.showModalTwo = !this.showModalTwo;
     }
   }
 }

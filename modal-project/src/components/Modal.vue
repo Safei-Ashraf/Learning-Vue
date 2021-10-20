@@ -1,12 +1,16 @@
 <template>
+<div>
     <div class="backdrop" @click="closeModal">
         <div class="modal" :class="{sale : theme === 'sale'}">
-            <slot>default content</slot>
+            <slot></slot>
            <div class="actions">
              <slot name="links"></slot>
+
            </div>
         </div>
     </div>
+      
+ </div>
 </template>
 
 <script>
@@ -16,7 +20,7 @@ export default {
     methods:{
         closeModal(){
             this.$emit('close')
-        }
+        },
     }
 }
 </script>
