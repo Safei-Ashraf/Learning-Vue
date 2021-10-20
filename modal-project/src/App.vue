@@ -28,7 +28,7 @@
    </Modal>
  </div>
  <button  @click.right="toggleModelTwo">
-   <span v-if="!showModalTwo">Show Modal</span>
+   <span v-if="!showModalTwo">Show Modal with Right Click</span>
    <span v-else>Hide Modal</span>
  </button>
  </div>
