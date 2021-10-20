@@ -145,6 +145,12 @@ button::before {
   position: absolute;
   animation: bubbles 5s linear infinite both;
 }
+button:disabled{
+  background-color: grey;
+  color: #196231;
+  cursor: not-allowed;
+
+}
 
 @keyframes bubbles {
   from {

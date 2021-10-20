@@ -1,11 +1,13 @@
 <template>
   <div class="block">
       Click me 🐱‍👓
+      {{delay}}
   </div>
 </template>
 
 <script>
 export default {
+    props:['delay',]
 
 }
 </script>
@@ -19,5 +21,8 @@ export default {
     text-align: center;
     padding: 100px 0;
     margin: 40px auto;
-  }
+    font-size: 8vw;
+    overflow: hidden;
+    word-wrap: break-word; 
+ }
 </style>
